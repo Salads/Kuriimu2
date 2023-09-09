@@ -23,7 +23,7 @@ namespace plugin_level5._3DS.Archives
             // File's overall header data.
             _fileCount = br.ReadInt32();
             _archiveSize = br.ReadInt32();
-            input.Position += 4; // Padding
+            br.BaseStream.Position += 8;
 
             // Read all file entries (header data, no content)
             List<GuildArchiveFileEntryHeader> entries = new List<GuildArchiveFileEntryHeader>();
